@@ -1,2 +1,0 @@
-# list
-Created with CodeSandbox
