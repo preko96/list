@@ -11,4 +11,7 @@ const mapDispatchToProps = dispatch => {
   return { onChange };
 };
 
-export default connect(mapDispatchToProps)(Search);
+export default connect(
+  null,
+  mapDispatchToProps
+)(Search);

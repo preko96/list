@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { idsSelector } from "./redux/list/selectors";
+import { searchSelector } from "./redux/search/selectors";
+import { idsSelector, selectFilteredIds } from "./redux/list/selectors";
 import Item from "./Item";
 
 function List({ ids }) {
@@ -8,7 +9,8 @@ function List({ ids }) {
 }
 
 const mapStateToProps = state => {
-  const ids = idsSelector(state);
+  const search = searchSelector(state);
+  const ids = search ? selectFilteredIds(state) : idsSelector(state);
   return { ids };
 };
 
